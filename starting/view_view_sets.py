@@ -10,7 +10,7 @@ from starting.serializers import SnippetSerializer
 
 class SnippetViewSets(viewsets.ModelViewSet):
     queryset = Snippet.objects.all()
-    serializer = SnippetSerializer
+    serializer_class  = SnippetSerializer
 
     @action(detail=True, renderer_classes=[renderers.StaticHTMLRenderer])
     def title_plus_code(self, request, *args, **kwargs):
